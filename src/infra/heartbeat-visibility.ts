@@ -1,6 +1,6 @@
-import type { ClawdbotConfig } from "../config/config.js";
+import type { MoltbotConfig } from "../config/config.js";
 import type { ChannelHeartbeatVisibilityConfig } from "../config/types.channels.js";
-import type { DeliverableMessageChannel, GatewayMessageChannel } from "../utils/message-channel.js";
+import type { GatewayMessageChannel } from "../utils/message-channel.js";
 
 export type ResolvedHeartbeatVisibility = {
   showOk: boolean;
@@ -20,7 +20,7 @@ const DEFAULT_VISIBILITY: ResolvedHeartbeatVisibility = {
  * For webchat, uses channels.defaults.heartbeat since webchat doesn't have per-channel config.
  */
 export function resolveHeartbeatVisibility(params: {
-  cfg: ClawdbotConfig;
+  cfg: MoltbotConfig;
   channel: GatewayMessageChannel;
   accountId?: string;
 }): ResolvedHeartbeatVisibility {
